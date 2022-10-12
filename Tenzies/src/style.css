@@ -5,6 +5,7 @@
 body {
   margin: 0;
   background-color: #0B2434;
+  font-family: Karla, sans-serif;
 }
 
 #root {
@@ -22,4 +23,29 @@ main {
   max-height: 400px;
   background-color: #F5F5F5;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.diceContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 1em;
+  row-gap: 1em;
+  padding: 2em;
+}
+
+.die {
+  width: 45px;
+  height: 45px;
+  color: #2B283A;
+  text-align: center;
+  line-height: 45px;
+  box-shadow: 0 4px 4px rgb(0, 0, 0, .25);
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
