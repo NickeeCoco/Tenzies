@@ -1,5 +1,5 @@
 function Die(props) {
-    const {id, value, isHeld, holdDice} = props
+    const {value, isHeld, holdDice} = props
 
     const styles = {
         backgroundColor: isHeld ? "#59E391" : "white"
@@ -8,7 +8,7 @@ function Die(props) {
         <div 
             className="die"
             style={styles}
-            onClick={() => holdDice(id)}
+            onClick={holdDice}
         >
                 {value}
         </div>

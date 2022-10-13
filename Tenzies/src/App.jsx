@@ -23,7 +23,7 @@ function App() {
     <Die 
       key={die.id} 
       {...die}
-      holdDice={holdDice}
+      holdDice={() => holdDice(die.id)}
     />
   )
 
