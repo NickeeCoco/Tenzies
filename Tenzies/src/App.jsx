@@ -12,20 +12,36 @@ function App() {
       const number = Math.ceil(Math.random() * 6)
       newDice.push({
         value: number,
-        isHeld: true,
+        isHeld: false,
         id: nanoid()
       })
     }
-console.log(newDice)
     return newDice
   }
   
   const diceElements = dice.map(die => 
     <Die 
       key={die.id} 
-        {...die} 
-      />
+      {...die}
+      holdDice={holdDice}
+    />
   )
+
+  function holdDice(id) {
+    setDice(prevDice => {
+      return prevDice.map(die => {
+        if(die.id === id) {
+          return ({
+            ...die,
+            isHeld: !die.isHeld
+          })
+        }
+        else {
+          return die
+        }
+      })
+    })
+  }
   
   return (
     <main>
