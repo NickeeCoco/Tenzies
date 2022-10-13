@@ -19,10 +19,14 @@ function App() {
     const newDice = []
 
     for(let i = 0; i < 10; i++) {
-      const number = Math.ceil(Math.random() * 6)
       newDice.push(generateNewDie())
     }
     return newDice
+  }
+
+  function newGame() {
+    setDice(createNewDice())
+    setTenzies(false)
   }
 
   function holdDice(id) {
@@ -71,7 +75,7 @@ function App() {
       <div className="dice-container">
         {diceElements}
       </div>
-      <button onClick={rollDice}>
+      <button onClick={tenzies ? newGame : rollDice}>
         {tenzies ? "New Game" : "Roll"}
       </button>
     </main>
