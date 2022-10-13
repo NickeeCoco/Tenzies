@@ -65,3 +65,12 @@ button {
   padding: .8rem 2rem;
   cursor: pointer;
 }
+
+button:hover {
+  background-color: #b535ff;
+  font-weight: bold;
+}
+
+button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
