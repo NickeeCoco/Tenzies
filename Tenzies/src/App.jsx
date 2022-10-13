@@ -2,7 +2,7 @@ import {useState} from "react"
 import Die from "./Die"
 
 function App() {
-  const [numbers, setNumbers] = useState(allNewDice())
+  const [dice, setDice] = useState(allNewDice())
 
   function allNewDice() {
     const randomNumbers = []
@@ -16,13 +16,14 @@ function App() {
 
   }
   
-  const dieElements = numbers.map(number => <Die value={number} />)
+  const diceElements = dice.map(die => <Die value={die} />)
   
   return (
     <main>
       <div className="diceContainer">
-        {dieElements}
+        {diceElements}
       </div>
+      <button onClick={() => setDice(allNewDice())}>Roll</button>
     </main>
   )
 }

@@ -24,8 +24,10 @@ main {
   background-color: #F5F5F5;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+
 }
 
 .diceContainer {
@@ -51,3 +53,15 @@ main {
   cursor: pointer;
 }
 
+button {
+  background-color: #5035FF;
+  color: white;
+  font-size: 1.5em;
+  font-family: Inter, sans-serif;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 4px rgb(0, 0, 0, .25);
+  border: none;
+  border-radius: 5px;
+  padding: .8rem 2rem;
+  cursor: pointer;
+}
