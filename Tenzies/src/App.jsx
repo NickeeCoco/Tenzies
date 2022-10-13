@@ -28,19 +28,11 @@ function App() {
   )
 
   function holdDice(id) {
-    setDice(prevDice => {
-      return prevDice.map(die => {
-        if(die.id === id) {
-          return ({
-            ...die,
-            isHeld: !die.isHeld
-          })
-        }
-        else {
-          return die
-        }
-      })
-    })
+    setDice(prevDice => prevDice.map(die => {
+        return die.id === id ? 
+          {...die, isHeld: !die.isHeld} :
+          die
+    }))
   }
   
   return (
