@@ -5,19 +5,24 @@ import {nanoid} from "nanoid"
 function App() {
   const [dice, setDice] = useState(createNewDice())
 
+  function generateNewDie() {
+    return {
+      value: Math.ceil(Math.random() * 6),
+      isHeld: false,
+      id: nanoid()
+    }
+  }
+
   function createNewDice() {
     const newDice = []
 
     for(let i = 0; i < 10; i++) {
       const number = Math.ceil(Math.random() * 6)
-      newDice.push({
-        value: number,
-        isHeld: false,
-        id: nanoid()
-      })
+      newDice.push(generateNewDie())
     }
     return newDice
   }
+
   
   const diceElements = dice.map(die => 
     <Die 
@@ -39,7 +44,7 @@ function App() {
     setDice(prevDice => prevDice.map(die => {
       return die.isHeld ?
         die :
-        {...die, value: Math.ceil(Math.random() * 6), id: nanoid()}
+        generateNewDie()
     }))
   }
   
